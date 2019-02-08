@@ -17,33 +17,51 @@ namespace RomanNumeralKata
             { "C", 100 },
         };
         public int Convert(string romanNumber)
-        {
+        {            
             if (arabicNumerals.ContainsKey(romanNumber))
             {
                 return arabicNumerals[romanNumber];
             }
 
+            int result = 0;            
+
             if (romanNumber.StartsWith("L"))
             {
-                return 50 + Convert(romanNumber.Substring(2));
+                result += 50;
+                romanNumber = romanNumber.Substring(2);
             }
 
             if (romanNumber.StartsWith("XL"))
             {
-                return 40 + Convert(romanNumber.Substring(2));
+                result += 40;
+                romanNumber = romanNumber.Substring(2);
             }
 
             if (romanNumber.StartsWith("X"))
             {
-                return 10 + Convert(romanNumber.Substring(2));
+                result += 10;
+                romanNumber = romanNumber.Substring(2);
             }
 
             if (romanNumber.StartsWith("V"))
             {
-                return 5 + Convert(romanNumber.Substring(1));
+                result += 5;
+                romanNumber = romanNumber.Substring(1);
             }
 
-            return 1 + Convert(romanNumber.Remove(0, 1));
+            if (romanNumber.StartsWith("IV"))
+            {
+                result += 4;
+                romanNumber = romanNumber.Substring(2);
+            }
+
+            while (!string.IsNullOrEmpty(romanNumber))
+            {
+                result += 1;
+                romanNumber = romanNumber.Substring(1);
+            }
+
+            return result;
         }
     }
 }
