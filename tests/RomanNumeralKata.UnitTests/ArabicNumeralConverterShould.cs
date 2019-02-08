@@ -21,6 +21,8 @@ namespace RomanNumeralKata.UnitTests
         [InlineData("VI", 6)]
         [InlineData("VII", 7)]
         [InlineData("VIII", 8)]
+        [InlineData("IX", 9)]
+        [InlineData("X", 10)]
 
         public void ConvertRomanNumeralToArabic(string romanNumber, int expected)
         {
