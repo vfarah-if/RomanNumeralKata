@@ -23,7 +23,7 @@ namespace RomanNumeralKata.UnitTests
         [InlineData("VIII", 8)]
         [InlineData("IX", 9)]
         [InlineData("X", 10)]
-
+        [InlineData("XL", 40)]
         public void ConvertRomanNumeralToArabic(string romanNumber, int expected)
         {
             var actual = arabicNumeralCoverter.Convert(romanNumber);
