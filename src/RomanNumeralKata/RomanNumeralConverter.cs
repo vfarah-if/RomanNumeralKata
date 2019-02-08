@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace RomanNumeralKata
 {
@@ -21,21 +23,38 @@ namespace RomanNumeralKata
                 return romanNumerals[arabicNumber];
             }
 
-            if (arabicNumber > 40)
+            var result = new StringBuilder();
+            while(arabicNumber >= 40)
             {
-                return $"XL{this.Convert(arabicNumber - 40)}";
+                result.Append("XL");
+                arabicNumber -= 40;
             }
 
-            if (arabicNumber > 10)
+            while (arabicNumber >= 10)
             {
-                return $"X{this.Convert(arabicNumber - 10)}";
+                result.Append("XL");
+                arabicNumber -= 10;
             }
 
-            if (arabicNumber > 5)
+            while (arabicNumber >= 5)
             {
-                return $"V{this.Convert(arabicNumber - 5)}";
+                result.Append("V");
+                arabicNumber -= 5;
             }
-            return $"I{this.Convert(arabicNumber - 1)}";
+
+            while (arabicNumber >= 4)
+            {
+                result.Append("IV");
+                arabicNumber -= 4;
+            }
+
+            while (arabicNumber >= 1)
+            {
+                result.Append("I");
+                arabicNumber -= 1;
+            }
+
+            return result.ToString();
         }
     }
 }
