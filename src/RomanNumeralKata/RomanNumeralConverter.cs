@@ -12,7 +12,6 @@ namespace RomanNumeralKata
             {9, "IX"},
             {10, "X"},
             {40, "XL"},
-            {44, "XLIV"},
         };
 
         public string Convert(int arabicNumber)
@@ -20,6 +19,16 @@ namespace RomanNumeralKata
             if (romanNumerals.ContainsKey(arabicNumber))
             {
                 return romanNumerals[arabicNumber];
+            }
+
+            if (arabicNumber > 40)
+            {
+                return $"XL{this.Convert(arabicNumber - 40)}";
+            }
+
+            if (arabicNumber > 10)
+            {
+                return $"X{this.Convert(arabicNumber - 10)}";
             }
 
             if (arabicNumber > 5)
