@@ -9,6 +9,8 @@ namespace RomanNumeralKata
             { "I", 1 },
             { "IV", 4 },
             { "V", 5 },
+            { "IX", 9 },
+            { "X", 10 },
         };
         public int Convert(string romanNumber)
         {
