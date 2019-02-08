@@ -6,7 +6,7 @@ namespace RomanNumeralKata
     {
         public string Convert(int arabicNumber)
         {
-            throw new NotImplementedException();
+            return "I";
         }
     }
 }
