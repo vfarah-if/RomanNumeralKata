@@ -5,7 +5,7 @@ namespace RomanNumeralKata
 {
     public class RomanNumeralConverter
     {
-        private readonly List<string> romanNumerals = new List<string>{"I", "II", "III"};
+        private readonly List<string> romanNumerals = new List<string>{"I", "II", "III", "IV"};
 
         public string Convert(int arabicNumber)
         {
