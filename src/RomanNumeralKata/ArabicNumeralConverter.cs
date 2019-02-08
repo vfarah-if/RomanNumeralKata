@@ -6,15 +6,15 @@ namespace RomanNumeralKata
     {
         private readonly Dictionary<string, int> arabicNumerals = new Dictionary<string, int>
         {
-            { "I", 1 },
-            { "IV", 4 },
-            { "V", 5 },
-            { "IX", 9 },
-            { "X", 10 },
-            { "XL", 40 },
-            { "L", 50 },
-            { "XC", 90 },
             { "C", 100 },
+            { "XC", 90 },
+            { "L", 50 },
+            { "XL", 40 },
+            { "X", 10 },
+            { "IX", 9 },
+            { "V", 5 },
+            { "IV", 4 },
+            { "I", 1 },
         };
         public int Convert(string romanNumber)
         {            
@@ -23,42 +23,15 @@ namespace RomanNumeralKata
                 return arabicNumerals[romanNumber];
             }
 
-            int result = 0;            
+            int result = 0;
 
-            if (romanNumber.StartsWith("L"))
+            foreach (var arabicNumeral in arabicNumerals)
             {
-                result += 50;
-                romanNumber = romanNumber.Substring(2);
-            }
-
-            if (romanNumber.StartsWith("XL"))
-            {
-                result += 40;
-                romanNumber = romanNumber.Substring(2);
-            }
-
-            if (romanNumber.StartsWith("X"))
-            {
-                result += 10;
-                romanNumber = romanNumber.Substring(1);
-            }
-
-            if (romanNumber.StartsWith("IX"))
-            {
-                result += 9;
-                romanNumber = romanNumber.Substring(2);
-            }
-
-            if (romanNumber.StartsWith("V"))
-            {
-                result += 5;
-                romanNumber = romanNumber.Substring(1);
-            }
-
-            if (romanNumber.StartsWith("IV"))
-            {
-                result += 4;
-                romanNumber = romanNumber.Substring(2);
+                if (romanNumber.StartsWith(arabicNumeral.Key))
+                {
+                    result += arabicNumeral.Value;
+                    romanNumber = romanNumber.Substring(arabicNumeral.Key.Length);
+                }
             }
 
             while (!string.IsNullOrEmpty(romanNumber))
