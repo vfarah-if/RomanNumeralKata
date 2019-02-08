@@ -10,6 +10,7 @@ namespace RomanNumeralKata
             { "IV", 4 },
             { "V", 5 },
             { "X", 10 },
+            { "XL", 40 },
         };
         public int Convert(string romanNumber)
         {
