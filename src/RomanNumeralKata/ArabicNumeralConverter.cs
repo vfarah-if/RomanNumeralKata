@@ -40,6 +40,12 @@ namespace RomanNumeralKata
             if (romanNumber.StartsWith("X"))
             {
                 result += 10;
+                romanNumber = romanNumber.Substring(1);
+            }
+
+            if (romanNumber.StartsWith("IX"))
+            {
+                result += 9;
                 romanNumber = romanNumber.Substring(2);
             }
 
