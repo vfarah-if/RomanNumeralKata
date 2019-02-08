@@ -4,7 +4,12 @@
     {
         public int Convert(string romanNumber)
         {
-            return 1;
+            if (romanNumber.Equals("I"))
+            {
+                return 1;
+            }
+
+            return 2;
         }
     }
 }
