@@ -8,7 +8,10 @@ namespace RomanNumeralKata
         {
             {1, "I"},
             {4, "IV"},
-            {5, "V"}
+            {5, "V"},
+            {6, "VI"},
+            {7, "VII"},
+            {8, "VIII"},
         };
 
         public string Convert(int arabicNumber)
