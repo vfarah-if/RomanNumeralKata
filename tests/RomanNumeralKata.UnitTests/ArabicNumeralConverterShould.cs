@@ -24,6 +24,9 @@ namespace RomanNumeralKata.UnitTests
         [InlineData("IX", 9)]
         [InlineData("X", 10)]
         [InlineData("XL", 40)]
+        [InlineData("XLIV", 44)]
+        [InlineData("XLIX", 49)]
+
         public void ConvertRomanNumeralToArabic(string romanNumber, int expected)
         {
             var actual = arabicNumeralCoverter.Convert(romanNumber);
