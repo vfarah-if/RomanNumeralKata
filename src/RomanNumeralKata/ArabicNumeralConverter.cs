@@ -7,13 +7,15 @@ namespace RomanNumeralKata
         private readonly Dictionary<string, int> arabicNumerals = new Dictionary<string, int>
         {
             { "I", 1 },
-            { "II", 2 },
-            { "III", 3 },
             { "IV", 4 },
         };
         public int Convert(string romanNumber)
         {
-            return arabicNumerals[romanNumber];
+            if (arabicNumerals.ContainsKey(romanNumber))
+            {
+                return arabicNumerals[romanNumber];
+            }            
+            return 1+Convert(romanNumber.Remove(0, 1));
         }
     }
 }
