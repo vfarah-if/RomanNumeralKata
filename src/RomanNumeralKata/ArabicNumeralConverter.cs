@@ -9,6 +9,7 @@ namespace RomanNumeralKata
             { "I", 1 },
             { "IV", 4 },
             { "V", 5 },
+            { "IX", 9 },
             { "X", 10 },
             { "XL", 40 },
             { "L", 50 },
@@ -22,14 +23,19 @@ namespace RomanNumeralKata
                 return arabicNumerals[romanNumber];
             }
 
+            if (romanNumber.StartsWith("L"))
+            {
+                return 50 + Convert(romanNumber.Substring(2));
+            }
+
             if (romanNumber.StartsWith("XL"))
             {
                 return 40 + Convert(romanNumber.Substring(2));
             }
 
-            if (romanNumber.EndsWith("X"))
+            if (romanNumber.StartsWith("X"))
             {
-                return 10 - Convert(romanNumber.Substring(0, romanNumber.Length - 1));
+                return 10 + Convert(romanNumber.Substring(2));
             }
 
             if (romanNumber.StartsWith("V"))
