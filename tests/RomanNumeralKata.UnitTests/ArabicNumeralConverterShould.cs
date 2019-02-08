@@ -15,6 +15,7 @@ namespace RomanNumeralKata.UnitTests
         [Theory]
         [InlineData("I", 1)]
         [InlineData("II", 2)]
+        [InlineData("III", 3)]
         public void ConvertRomanNumeralToArabic(string romanNumber, int expected)
         {
             var actual = arabicNumeralCoverter.Convert(romanNumber);
