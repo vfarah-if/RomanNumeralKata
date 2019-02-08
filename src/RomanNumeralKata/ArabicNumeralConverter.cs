@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace RomanNumeralKata
+﻿namespace RomanNumeralKata
 {
     public class ArabicNumeralConverter
     {
         public int Convert(string romanNumber)
         {
-            throw new NotImplementedException();
+            return 1;
         }
     }
 }
