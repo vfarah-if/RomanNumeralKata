@@ -1,15 +1,19 @@
-﻿namespace RomanNumeralKata
+﻿using System.Collections.Generic;
+
+namespace RomanNumeralKata
 {
     public class ArabicNumeralConverter
     {
+        private readonly Dictionary<string, int> arabicNumerals = new Dictionary<string, int>
+        {
+            { "I", 1 },
+            { "II", 2 },
+            { "III", 3 },
+
+        };
         public int Convert(string romanNumber)
         {
-            if (romanNumber.Equals("I"))
-            {
-                return 1;
-            }
-
-            return 2;
+            return arabicNumerals[romanNumber];
         }
     }
 }
