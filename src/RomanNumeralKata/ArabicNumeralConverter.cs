@@ -6,7 +6,6 @@ namespace RomanNumeralKata
     {
         private readonly Dictionary<string, int> arabicNumerals = new Dictionary<string, int>
         {
-            { "MM", 2000},
             { "M", 1000},
             { "CM", 900},
             { "D", 500},
@@ -25,19 +24,16 @@ namespace RomanNumeralKata
         {
             int result = 0;
 
-            foreach (var arabicNumeral in arabicNumerals)
-            {
-                if (romanNumber.StartsWith(arabicNumeral.Key))
-                {
-                    result += arabicNumeral.Value;
-                    romanNumber = romanNumber.Substring(arabicNumeral.Key.Length);
-                }
-            }
-
             while (!string.IsNullOrEmpty(romanNumber))
             {
-                result += 1;
-                romanNumber = romanNumber.Substring(1);
+                foreach (var arabicNumeral in arabicNumerals)
+                {
+                    if (romanNumber.StartsWith(arabicNumeral.Key))
+                    {
+                        result += arabicNumeral.Value;
+                        romanNumber = romanNumber.Substring(arabicNumeral.Key.Length);
+                    }
+                }
             }
 
             return result;
