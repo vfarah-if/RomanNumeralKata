@@ -11,14 +11,17 @@ namespace RomanNumeralKata
             { "V", 5 },
             { "X", 10 },
             { "XL", 40 },
-            { "XLIV", 44 },
-            { "XLIX", 49 },
         };
         public int Convert(string romanNumber)
         {
             if (arabicNumerals.ContainsKey(romanNumber))
             {
                 return arabicNumerals[romanNumber];
+            }
+
+            if (romanNumber.StartsWith("XL"))
+            {
+                return 40 + Convert(romanNumber.Substring(2));
             }
 
             if (romanNumber.EndsWith("X"))
@@ -28,10 +31,10 @@ namespace RomanNumeralKata
 
             if (romanNumber.StartsWith("V"))
             {
-                return 5 + Convert(romanNumber.Substring(1, romanNumber.Length-1));
+                return 5 + Convert(romanNumber.Substring(1));
             }
 
-            return 1+Convert(romanNumber.Substring(0, romanNumber.Length - 1));
+            return 1 + Convert(romanNumber.Remove(0, 1));
         }
     }
 }
