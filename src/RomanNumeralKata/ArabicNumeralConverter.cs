@@ -9,7 +9,6 @@ namespace RomanNumeralKata
             { "I", 1 },
             { "IV", 4 },
             { "V", 5 },
-            { "IX", 9 },
             { "X", 10 },
         };
         public int Convert(string romanNumber)
@@ -19,11 +18,17 @@ namespace RomanNumeralKata
                 return arabicNumerals[romanNumber];
             }
 
+            if (romanNumber.EndsWith("X"))
+            {
+                return 10 - Convert(romanNumber.Substring(0, romanNumber.Length - 1));
+            }
+
             if (romanNumber.StartsWith("V"))
             {
                 return 5 + Convert(romanNumber.Substring(1, romanNumber.Length-1));
             }
-            return 1+Convert(romanNumber.Remove(0, 1));
+
+            return 1+Convert(romanNumber.Substring(0, romanNumber.Length - 1));
         }
     }
 }
