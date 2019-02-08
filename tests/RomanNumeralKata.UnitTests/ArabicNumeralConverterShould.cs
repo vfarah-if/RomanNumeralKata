@@ -26,6 +26,9 @@ namespace RomanNumeralKata.UnitTests
         [InlineData("XL", 40)]
         [InlineData("XLIV", 44)]
         [InlineData("XLIX", 49)]
+        [InlineData("L", 50)]
+        [InlineData("XC", 90)]
+        [InlineData("C", 100)]
 
         public void ConvertRomanNumeralToArabic(string romanNumber, int expected)
         {
