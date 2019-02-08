@@ -6,6 +6,11 @@ namespace RomanNumeralKata
     {
         private readonly Dictionary<string, int> arabicNumerals = new Dictionary<string, int>
         {
+            { "MM", 2000},
+            { "M", 1000},
+            { "CM", 900},
+            { "D", 500},
+            { "CD", 400},
             { "C", 100 },
             { "XC", 90 },
             { "L", 50 },
@@ -17,12 +22,7 @@ namespace RomanNumeralKata
             { "I", 1 },
         };
         public int Convert(string romanNumber)
-        {            
-            if (arabicNumerals.ContainsKey(romanNumber))
-            {
-                return arabicNumerals[romanNumber];
-            }
-
+        {
             int result = 0;
 
             foreach (var arabicNumeral in arabicNumerals)
