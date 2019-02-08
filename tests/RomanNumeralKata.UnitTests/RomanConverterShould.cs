@@ -15,6 +15,7 @@ namespace RomanNumeralKata.UnitTests
 
         [Theory]
         [InlineData(1, "I")]
+        [InlineData(2, "II")]
         public void ConvertNumberToRoman(int number, string expected)
         {
             var actual = romanNumeralConverter.Convert(number);
