@@ -29,7 +29,14 @@ namespace RomanNumeralKata.UnitTests
         [InlineData("L", 50)]
         [InlineData("XC", 90)]
         [InlineData("C", 100)]
-
+        [InlineData("CIII", 103)]
+        [InlineData("CD", 400)]
+        [InlineData("D", 500)]
+        [InlineData("DCCCXLVI", 846)]
+        [InlineData("CM", 900)]
+        [InlineData("M", 1000)]
+        [InlineData("MCMXCIX", 1999)]
+        [InlineData("MMVIII", 2008)]
         public void ConvertRomanNumeralToArabic(string romanNumber, int expected)
         {
             var actual = arabicNumeralCoverter.Convert(romanNumber);
