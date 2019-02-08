@@ -6,11 +6,7 @@ namespace RomanNumeralKata
     {
         public string Convert(int arabicNumber)
         {
-            if (arabicNumber == 1)
-            {
-                return "I";
-            }
-            return "II";
+            return arabicNumber == 1 ? "I" : "II";
         }
     }
 }
