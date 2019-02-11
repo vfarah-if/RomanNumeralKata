@@ -24,6 +24,11 @@ namespace RomanNumeralKata
         {
             int result = 0;
 
+            if (arabicNumerals.ContainsKey(romanNumber))
+            {
+                return arabicNumerals[romanNumber];
+            }
+
             while (!string.IsNullOrEmpty(romanNumber))
             {
                 foreach (var arabicNumeral in arabicNumerals)
